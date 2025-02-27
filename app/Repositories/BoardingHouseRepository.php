@@ -4,7 +4,7 @@ namespace App\Repositories;
 
 use App\Interface\BoardingHouseRepositoryInterface;
 use App\Models\BoardingHouse;
-use Filament\Forms\Components\Builder;
+use Illuminate\Database\Eloquent\Builder;
 
 class BoardingHouseRepository implements BoardingHouseRepositoryInterface 
 {
@@ -13,7 +13,7 @@ class BoardingHouseRepository implements BoardingHouseRepositoryInterface
         $query = BoardingHouse::query();
 
         if ($search) {
-            $query->where('name', 'like', '%' > $search . '%');
+            $query->where('name', 'like', '%' . $search . '%');
         }
 
         if ($city) {
