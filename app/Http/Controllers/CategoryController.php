@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Interface\BoardingHouseRepositoryInterface;
 use App\Interface\CategoryRepositoryInterface;
-use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
