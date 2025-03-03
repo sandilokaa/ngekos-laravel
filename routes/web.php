@@ -26,4 +26,5 @@ Route::get('/categories/{slug}', [CategoryController::class, 'show'])->name('cat
 Route::get('/cities/{slug}', [CityController::class, 'show'])->name('city.show');
 
 Route::get('/find-boarding', [BoardingHouseController::class, 'find'])->name('find-boarding');
+Route::get('/find-boarding/{slug}', [BoardingHouseController::class, 'show'])->name('find-boarding.show');
 Route::get('/find-result', [BoardingHouseController::class, 'findResults'])->name('find-boarding.results');
