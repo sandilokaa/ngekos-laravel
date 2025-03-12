@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Interface\BoardingHouseRepositoryInterface;
-use App\Interface\CityRepositoryInterface;
+use App\Interfaces\BoardingHouseRepositoryInterface;
+use App\Interfaces\CityRepositoryInterface;
 use Illuminate\Http\Request;
 
 class CityController extends Controller
