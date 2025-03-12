@@ -29,3 +29,7 @@ Route::get('/find-boarding', [BoardingHouseController::class, 'find'])->name('fi
 Route::get('/find-boarding/{slug}', [BoardingHouseController::class, 'show'])->name('find-boarding.show');
 Route::get('/find-boarding/{slug}/rooms', [BoardingHouseController::class, 'rooms'])->name('find-boarding.rooms');
 Route::get('/find-result', [BoardingHouseController::class, 'findResults'])->name('find-boarding.results');
+
+Route::get('/find-boarding/booking/{slug}', [BookingController::class, 'booking'])->name('booking');
+Route::get('/find-boarding/booking/{slug}/information', [BookingController::class, 'information'])->name('booking.information');
+Route::post('/find-boarding/booking/{slug}/information/save', [BookingController::class, 'saveInformation'])->name('booking.information.save');
