@@ -13,11 +13,16 @@ class BookingController extends Controller
     private TransactionRepositoryInterface $transactionRepository;
 
     public function __construct(
-        TransactionRepositoryInterface $transactionRepository,
-        BoardingHouseRepositoryInterface $boardingHouseRepository
+        BoardingHouseRepositoryInterface $boardingHouseRepository,
+        TransactionRepositoryInterface $transactionRepository
     ) {
-        $this->transactionRepository = $transactionRepository;
         $this->boardingHouseRepository = $boardingHouseRepository;
+        $this->transactionRepository = $transactionRepository;
+    }
+
+    public function check()
+    {
+        return view('pages.check-booking');
     }
 
     public function booking(Request $request, $slug)
@@ -34,10 +39,5 @@ class BookingController extends Controller
         $room = $this->boardingHouseRepository->getBoardingHouseRoomById($transaction['room_id']);
 
         return view('pages.booking.information', compact('transaction', 'boardingHouse', 'room'));
-    }
-
-    public function check()
-    {
-        return view('pages.check-booking');
     }
 }
